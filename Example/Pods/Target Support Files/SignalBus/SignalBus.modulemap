@@ -1,0 +1,6 @@
+framework module SignalBus {
+  umbrella header "SignalBus-umbrella.h"
+
+  export *
+  module * { export * }
+}
