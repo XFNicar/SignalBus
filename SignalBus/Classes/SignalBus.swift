@@ -33,10 +33,17 @@ open class SignalBus: NSObject {
         receiverCache[uniqueIdentifier] = signalReceiver
     }
     
+    
+    /// 发送信号
+    /// - Parameters:
+    ///   - uniqueIdentifier: 信号ID
+    ///   - signal: 信号体，如果该信号为单次通信，则发送完毕即从缓存池移除
     public func send(_ uniqueIdentifier: String, signal: SignalTransmissionProtocol) {
         if let task = receiverCache[uniqueIdentifier] {
             task(signal)
-            
+            if signal.isSingle {
+                receiverCache.removeValue(forKey: uniqueIdentifier)
+            }
         }
     }
     
@@ -56,6 +63,7 @@ open class SignalBody: NSObject,SignalTransmissionProtocol {
     open var isSingle: Bool = true
     // 信号ID
     open var signalId: String!
+    
     
     public init(with signalId: String, _ isSingle: Bool) {
         self.signalId = signalId

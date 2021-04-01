@@ -24,7 +24,7 @@ TODO: Add long description of the pod here.
   s.homepage         = 'https://github.com/XFNicar/SignalBus'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'XFNicar' => 'xuejingwen25@163.com' }
+  s.author           = { 'XFNicar' => 'loselabel@gmail.com' }
   s.source           = { :git => 'https://github.com/XFNicar/SignalBus.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
